@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class threadPrato extends Thread {
+	private int dif = 0;
 	private int i = 0;
 	private int tempo;
 	static int perc;
@@ -61,7 +62,12 @@ public class threadPrato extends Thread {
 				e.printStackTrace();
 			}
 			i += 100;
-			tAtual += 100;
+			if (i > tempo) {
+				dif = i - tempo;
+				i -= dif;
+				tAtual += (100 - dif);
+			} else
+				tAtual += 100;
 		}
 
 	}
@@ -93,7 +99,12 @@ public class threadPrato extends Thread {
 				e.printStackTrace();
 			}
 			i += 100;
-			tAtual += 100;
+			if (i > tempo) {
+				dif = i - tempo;
+				i -= dif;
+				tAtual += (100 - dif);
+			} else
+				tAtual += 100;
 		}
 
 	}
